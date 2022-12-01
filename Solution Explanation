@@ -1,0 +1,38 @@
+Inputs
+Shape (Cuboctahedral/Spherical)
+Application (Optical/Electrical/Magnetic/Strength/None)
+Range of size of nanoparticle (default: 1-50 nm)
+Output
+Graph of % of atoms in Bulk/Surface vs. Particle Size for the chosen Shape and Application
+
+Workflow
+First, a user must choose one of the shapes (Cuboctahedral/Spherical). Then, the user can optionally choose one of the following applications. The nanoparticle sizes are mentioned below:
+
+Application	Radius Range (nm)
+Optical	40-100
+Electrical	10-20
+Magnetic	1-10
+Strength	1-50
+None	User Choice
+If the user doesn't want to choose any of the applications among Optical, Electrical, Magnetic, Strength, they can just select None and type custom range values for nanoparticle size.
+
+Finally, the user give input as index 1/2/3/4/5
+
+Code
+The Code uses the following formulae:
+
+Total Number of atoms in Cuboctahedral shape = (10k^3 + 15k^2 + 11k + 3)/3
+
+Number of atoms on the surface of Cuboctahedral shape = (10k^2 + 2)
+
+Total Number of atoms in Spherical shape = (10k^3 - 15k^2 + 11k - 3)/3
+
+Number of atoms on the surface of Spherical shape = (10k^2 - 20k + 12)
+
+where, k is the size of the atom
+
+After the user gives the inputs, the application will apply the appropriate formulae to calculate the % of surface atoms for the specified shape. Then, this value is subtracted from 100 to get the % of bulk atoms. These percentages are calculated for all particle sizes in the size range specified.
+
+Finally, a graph is plotted with these percentages on the Y-axis and particle sizes on the X-axis.
+
+alt text
